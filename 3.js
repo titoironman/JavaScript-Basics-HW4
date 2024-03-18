@@ -14,4 +14,28 @@
 не окажется, значит нужно будет вывести пустой массив.
 */
 
-// Здесь пишем решение, данный комментарий необходимо стереть.
+console.log("");
+console.log("Задание 3:");
+const randomArray = [];
+
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+for (let index = 0; index < 5; index++) {
+    randomArray[index] = randomNumber(0, 9);
+}
+console.log(`${randomArray}`);
+
+console.log(`1. Сумма элементов массива ${randomArray.reduce((sum, a) => sum + a, 0)}`);
+
+console.log(`2. Минимальное значение в массиве ${Math.min(...randomArray)}`);
+const newArray = [];
+for (let index = 0; index < randomArray.length; index++) {
+    if (randomArray[index] === 3) {
+        newArray.push(index);
+    }
+}
+
+console.log(`3. Новый массив, содержащий индексы сгенерированного выше массива, в которых 
+значение равно 3. ${newArray}`);
